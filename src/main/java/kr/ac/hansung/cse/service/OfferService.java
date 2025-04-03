@@ -8,10 +8,15 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class OfferService {
+    //service -> dao
     @Autowired
     private OfferDao offerDao;
 
     public List<Offer> getAllOffers() {
         return offerDao.getOffers();
+    }
+
+    public void insertOffer(Offer offer) {
+        offerDao.insert(offer);
     }
 }
